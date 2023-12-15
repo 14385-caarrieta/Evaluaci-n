@@ -1,0 +1,47 @@
+﻿@model Vehiculo_CRUD.Models.marca
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Eliminar</h2>
+<h3>Seguro quieres eliminar?</h3>
+<div>
+    <h4>Marca</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.pais)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.pais)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.direccion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.direccion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.foto)
+        </dt>
+        <dd>
+            <img src="@Url.Content("~/Content/assets/images/" + @Model.foto)" alt="Marca" height="100" title="@Model.pais"/>
+
+        </dd>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-warning" /> |
+            @Html.ActionLink("Regresar", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,108 @@
+﻿@model Vehiculo_CRUD.Models.vehiculo
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Eliminar</h2>
+<h3>¿Seguro quieres eliminar?</h3>
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.placa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.placa)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.motor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.motor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.chasis)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.chasis)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.combustible)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.combustible)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.anio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.anio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.foto)
+        </dt>
+        <dd>
+            <img src="@Url.Content("~/Content/assets/images/" + @Model.foto)" alt="Producto" height="100" />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.avaluo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.avaluo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.color)
+        </dt>
+        <dd>
+            @{
+                switch (Model.color)
+                {
+                    case 1: <span>Negro</span>
+                        break;
+                    case 2: <span>Rojo</span>
+                        break;
+                    case 3: <span>Azul</span>
+                        break;
+                    case 4: <span>Plomo</span>
+                        break;
+                    case 5: <span>Verde</span>
+                        break;
+                }
+
+            }
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.marca)
+        </dt>
+        <dd>
+            @{
+                switch (Model.marca)
+                {
+                    case 1: <text>Chevrolet</text>
+                    break;
+                case 2: <text>Fiat</text>
+                break;
+            case 3: <text>Great Wall</text>
+            break;
+        case 4: <text>Toyota</text>
+        break;
+    case 5: <text>Hyundai</text>
+        break;
+    case 7:<text>Ferrari</text>
+                        break; 
+                }
+            }
+        </dd>
+
+    </dl>
+    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-warning" /> |
+            @Html.ActionLink("Regresar", "Index")
+        </div>
+    }
+</div>

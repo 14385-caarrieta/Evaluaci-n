@@ -1,0 +1,116 @@
+﻿@model IEnumerable<Vehiculo_CRUD.Models.vehiculo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create Nuevo", "Agregar")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Placa
+        </th>
+        <th>
+            Marca
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.motor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.chasis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.combustible)
+            </th>*@
+        <th>
+            Año
+        </th>
+        <th>
+            Color
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.foto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.avaluo)
+            </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.placa)
+            </td>
+            <td>
+                @{
+                    switch (item.marca)
+                    {
+                        case 1: <span>Chevrolet</span>
+                            break;
+                        case 2: <span>Fiat</span>
+                            break;
+                        case 3: <span>Great Wall</span>
+                            break;
+                        case 4: <span>Toyota</span>
+                            break;
+                        case 5: <span>Hyundai</span>
+                            break;
+                        case 7: <span>Ferrari</span>
+                            break;
+                    }
+
+                }
+                @*@Html.DisplayFor(modelItem => item.marca)*@
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.motor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.chasis)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.combustible)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.anio)
+            </td>
+            <td>
+                @{
+                    switch (item.color)
+                    {
+                        case 1: <span>Negro</span>
+                            break;
+                        case 2: <span>Rojo</span>
+                            break;
+                        case 3: <span>Azul</span>
+                            break;
+                        case 4: <span>Plomo</span>
+                            break;
+                        case 5: <span>Verde</span>
+                            break;
+                    }
+
+                }
+                @*@Html.DisplayFor(modelItem => item.color)*@
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.foto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.avaluo)
+                </td>*@
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Detalle", "Details", new { id = item.id }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>

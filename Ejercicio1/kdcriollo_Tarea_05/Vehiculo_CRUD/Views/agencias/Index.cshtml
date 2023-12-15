@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Vehiculo_CRUD.Models.agencia>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Index</h2>
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+<table class="table table-dark">
+    <tr>
+        <th>
+            Descripción
+        </th>
+        <th>
+            Dirección
+        </th>
+        <th>
+            Teléfono
+        </th>
+        <th>
+            Hora Inicio
+        </th>
+        <th>
+            Hora Fin
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.foto)
+        </th>*@
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.horainicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.horafin)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.foto)
+        </td>*@
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
+            @Html.ActionLink("Detalles", "Details", new { id = item.id }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.id })
+        </td>
+    </tr>
+    }
+</table>

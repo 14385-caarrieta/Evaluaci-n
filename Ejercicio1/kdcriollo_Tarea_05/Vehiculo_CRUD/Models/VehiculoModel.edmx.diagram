@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="535bfc097bd94291b40c68a428d03528" Name="Diagram1">
+        <EntityTypeShape EntityType="VehiculoMatricula_BDModel.agencia" Width="1.5" PointX="5.375" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VehiculoMatricula_BDModel.color" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="VehiculoMatricula_BDModel.marca" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VehiculoMatricula_BDModel.matricula" Width="1.5" PointX="6.5" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VehiculoMatricula_BDModel.vehiculo" Width="1.5" PointX="4" PointY="2.5" IsExpanded="true" />
+        <AssociationConnector Association="VehiculoMatricula_BDModel.FK__matricula__agenc__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="VehiculoMatricula_BDModel.matricula_agencia" ManuallyRouted="false" />
+        <AssociationConnector Association="VehiculoMatricula_BDModel.FK__vehiculo__color__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="VehiculoMatricula_BDModel.vehiculo_color" ManuallyRouted="false" />
+        <AssociationConnector Association="VehiculoMatricula_BDModel.FK__vehiculo__marca__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="VehiculoMatricula_BDModel.vehiculo_marca" ManuallyRouted="false" />
+        <AssociationConnector Association="VehiculoMatricula_BDModel.FK__matricula__vehic__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="VehiculoMatricula_BDModel.matricula_vehiculo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
